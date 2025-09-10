@@ -8,6 +8,10 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
+         <form>
+            <input type = "text" id = "userinput">
+            <button onclick="addListAfterClick()">Enter</button>
+         </form>
 
       <ul>
          <li>Notebook</li>
@@ -21,6 +25,18 @@
       <script>
       
         // add code here
+        function addListAfterClick(){
+         event.preventDefault();
+            var ul = document.getElementsByTagName("ul")[0];
+            var li = document.createElement("li");
+            var input = document.getElementById("userinput");
+            if(input.value.length > 0){
+               var textNode = document.createTextNode(input.value);
+               li.appendChild(textNode);
+               ul.appendChild(li);
+               input.value = "";
+            }
+        }
 
       </script>
  
